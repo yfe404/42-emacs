@@ -37,6 +37,22 @@ It is intended to help 42 students maintain Norm-compliant code and speed up dev
    - Highlighting of trailing whitespace (to avoid norm errors)  
    - Spaces instead of tabs by default  
    - Automatic file reloading if changed on disk (auto-revert)
+  
+4. **Automatic Backups**
+
+This Emacs configuration automatically creates backup files whenever you **save** a file, and stores them in `~/.emacs.d/backups`. Likewise, **auto-save** files (the ones Emacs creates periodically while you edit) go into `~/.emacs.d/auto-saves/`. This keeps your project folders clean and ensures you always have older versions of files available if you need to revert changes or recover from crashes.
+
+**How it works:**
+- **On Save**: Emacs copies the previous version of your file into the `backups` folder. You’ll often see filenames with a `~` suffix or version number in there.
+- **While Editing**: Emacs periodically writes auto-saves to `auto-saves/`. If Emacs or your computer crashes, you can recover in-progress edits from those files.
+- **Recovery**: To restore a backup, open it directly from `~/.emacs.d/backups/`, or use Emacs’ built-in commands (like `M-x recover-file`) to revert changes.
+- **Customization**: If you prefer different behavior (or no backups at all), simply remove or edit these lines in `init.el`:
+  ```elisp
+  (setq backup-directory-alist `(("." . "~/.emacs.d/backups"))
+        make-backup-files t
+        auto-save-default t
+        auto-save-file-name-transforms `((".*" "~/.emacs.d/auto-saves/" t)))
+
 
 ---
 
