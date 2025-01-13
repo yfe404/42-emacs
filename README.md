@@ -60,7 +60,7 @@ This Emacs configuration automatically creates backup files whenever you **save*
 
 1. **Clone this Repo** (or copy the files) into your home directory (or wherever you store your Emacs config):
    ```bash
-   git clone https://github.com/<your-username>/42-emacs.git
+   git clone https://github.com/yfe404/42-emacs.git
    ```
 2. **Link the config** so Emacs can load it. Common options:
    - **If you use `~/.emacs.d/init.el`:**
