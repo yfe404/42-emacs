@@ -101,8 +101,8 @@ Warning: SPC_BEFORE_NL      (line:  20, col:   3): Space before newline
             (flycheck-select-checker 'norminette)
             (flycheck-mode 1)))
 
-;; Only check on save and idle-change (so we can still see errors without losing highlights)
-(setq-default flycheck-check-syntax-automatically '(save idle-change mode-enabled))
+;; Only check on save
+(setq-default flycheck-check-syntax-automatically '(save mode-enabled))
 
 ;; Highlight entire lines for errors/warnings
 (setq flycheck-highlighting-mode 'lines)
